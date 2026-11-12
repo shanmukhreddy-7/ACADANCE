@@ -1,0 +1,13 @@
+{
+  "name": "acadence-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix app run dev",
+    "build": "npm --prefix app run build",
+    "start": "npm --prefix app run start",
+    "setup": "npm run postinstall",
+    "test": "npm --prefix app test",
+    "core:build": "node app/scripts/build-core.mjs",
+    "postinstall": "npm --prefix app install && node app/scripts/setup-env.mjs"
+  }
+}

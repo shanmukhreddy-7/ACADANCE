@@ -1,0 +1,448 @@
+{
+  "input": 0,
+  "output": 40,
+  "constants": [
+    {
+      "index": 1,
+      "shape": [
+        128
+      ],
+      "dtype": "float32",
+      "offset": 0,
+      "length": 512
+    },
+    {
+      "index": 2,
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "offset": 512,
+      "length": 256
+    },
+    {
+      "index": 3,
+      "shape": [
+        128,
+        3,
+        3,
+        64
+      ],
+      "dtype": "float32",
+      "offset": 768,
+      "length": 294912
+    },
+    {
+      "index": 4,
+      "shape": [
+        64,
+        3,
+        3,
+        32
+      ],
+      "dtype": "float32",
+      "offset": 295680,
+      "length": 73728
+    },
+    {
+      "index": 5,
+      "shape": [
+        185,
+        1280
+      ],
+      "dtype": "float32",
+      "offset": 369408,
+      "length": 947200
+    },
+    {
+      "index": 6,
+      "shape": [
+        1
+      ],
+      "dtype": "int32",
+      "offset": 1316608,
+      "length": 4
+    },
+    {
+      "index": 7,
+      "shape": [
+        185
+      ],
+      "dtype": "float32",
+      "offset": 1316612,
+      "length": 740
+    },
+    {
+      "index": 8,
+      "shape": [],
+      "dtype": "int32",
+      "offset": 1317352,
+      "length": 4
+    },
+    {
+      "index": 9,
+      "shape": [
+        1
+      ],
+      "dtype": "int32",
+      "offset": 1317356,
+      "length": 4
+    },
+    {
+      "index": 10,
+      "shape": [
+        1
+      ],
+      "dtype": "int32",
+      "offset": 1317360,
+      "length": 4
+    },
+    {
+      "index": 11,
+      "shape": [
+        3
+      ],
+      "dtype": "int32",
+      "offset": 1317364,
+      "length": 12
+    },
+    {
+      "index": 12,
+      "shape": [
+        4
+      ],
+      "dtype": "int32",
+      "offset": 1317376,
+      "length": 16
+    },
+    {
+      "index": 13,
+      "shape": [
+        4
+      ],
+      "dtype": "int32",
+      "offset": 1317392,
+      "length": 16
+    },
+    {
+      "index": 14,
+      "shape": [
+        4
+      ],
+      "dtype": "int32",
+      "offset": 1317408,
+      "length": 16
+    },
+    {
+      "index": 15,
+      "shape": [
+        4
+      ],
+      "dtype": "int32",
+      "offset": 1317424,
+      "length": 16
+    },
+    {
+      "index": 16,
+      "shape": [
+        4,
+        2
+      ],
+      "dtype": "int32",
+      "offset": 1317440,
+      "length": 32
+    },
+    {
+      "index": 17,
+      "shape": [
+        4
+      ],
+      "dtype": "int32",
+      "offset": 1317472,
+      "length": 16
+    },
+    {
+      "index": 18,
+      "shape": [
+        32,
+        3,
+        3,
+        1
+      ],
+      "dtype": "float32",
+      "offset": 1317488,
+      "length": 1152
+    },
+    {
+      "index": 19,
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "offset": 1318640,
+      "length": 128
+    }
+  ],
+  "operations": [
+    {
+      "name": "CONV_2D",
+      "inputs": [
+        0,
+        18,
+        19
+      ],
+      "output": 20,
+      "options": {
+        "padding": 0,
+        "strideH": 1,
+        "strideW": 1,
+        "dilationH": 1,
+        "dilationW": 1,
+        "activation": 1
+      }
+    },
+    {
+      "name": "MAX_POOL_2D",
+      "inputs": [
+        20
+      ],
+      "output": 21,
+      "options": {
+        "padding": 1,
+        "strideH": 2,
+        "strideW": 2,
+        "filterH": 2,
+        "filterW": 2,
+        "activation": 0
+      }
+    },
+    {
+      "name": "CONV_2D",
+      "inputs": [
+        21,
+        4,
+        2
+      ],
+      "output": 22,
+      "options": {
+        "padding": 0,
+        "strideH": 1,
+        "strideW": 1,
+        "dilationH": 1,
+        "dilationW": 1,
+        "activation": 1
+      }
+    },
+    {
+      "name": "MAX_POOL_2D",
+      "inputs": [
+        22
+      ],
+      "output": 23,
+      "options": {
+        "padding": 1,
+        "strideH": 2,
+        "strideW": 2,
+        "filterH": 2,
+        "filterW": 2,
+        "activation": 0
+      }
+    },
+    {
+      "name": "CONV_2D",
+      "inputs": [
+        23,
+        3,
+        1
+      ],
+      "output": 24,
+      "options": {
+        "padding": 0,
+        "strideH": 1,
+        "strideW": 1,
+        "dilationH": 1,
+        "dilationW": 1,
+        "activation": 1
+      }
+    },
+    {
+      "name": "PAD",
+      "inputs": [
+        24,
+        16
+      ],
+      "output": 25,
+      "options": {}
+    },
+    {
+      "name": "AVERAGE_POOL_2D",
+      "inputs": [
+        25
+      ],
+      "output": 26,
+      "options": {
+        "padding": 1,
+        "strideH": 6,
+        "strideW": 3,
+        "filterH": 6,
+        "filterW": 3,
+        "activation": 0
+      }
+    },
+    {
+      "name": "STRIDED_SLICE",
+      "inputs": [
+        26,
+        12,
+        13,
+        14
+      ],
+      "output": 27,
+      "options": {
+        "beginMask": 13,
+        "endMask": 13,
+        "ellipsisMask": 0,
+        "newAxisMask": 0,
+        "shrinkAxisMask": 0
+      }
+    },
+    {
+      "name": "STRIDED_SLICE",
+      "inputs": [
+        27,
+        12,
+        15,
+        14
+      ],
+      "output": 28,
+      "options": {
+        "beginMask": 11,
+        "endMask": 11,
+        "ellipsisMask": 0,
+        "newAxisMask": 0,
+        "shrinkAxisMask": 0
+      }
+    },
+    {
+      "name": "SHAPE",
+      "inputs": [
+        28
+      ],
+      "output": 29,
+      "options": {}
+    },
+    {
+      "name": "SLICE",
+      "inputs": [
+        29,
+        9,
+        10
+      ],
+      "output": 30,
+      "options": {}
+    },
+    {
+      "name": "CONCATENATION",
+      "inputs": [
+        30,
+        6
+      ],
+      "output": 31,
+      "options": {
+        "axis": 0
+      }
+    },
+    {
+      "name": "TRANSPOSE",
+      "inputs": [
+        28,
+        17
+      ],
+      "output": 32,
+      "options": {}
+    },
+    {
+      "name": "CAST",
+      "inputs": [
+        31
+      ],
+      "output": 33,
+      "options": {}
+    },
+    {
+      "name": "RESHAPE",
+      "inputs": [
+        32,
+        33
+      ],
+      "output": 34,
+      "options": {}
+    },
+    {
+      "name": "SHAPE",
+      "inputs": [
+        34
+      ],
+      "output": 35,
+      "options": {}
+    },
+    {
+      "name": "STRIDED_SLICE",
+      "inputs": [
+        35,
+        9,
+        10,
+        10
+      ],
+      "output": 36,
+      "options": {
+        "beginMask": 0,
+        "endMask": 0,
+        "ellipsisMask": 0,
+        "newAxisMask": 0,
+        "shrinkAxisMask": 1
+      }
+    },
+    {
+      "name": "PACK",
+      "inputs": [
+        36,
+        8
+      ],
+      "output": 37,
+      "options": {
+        "axis": 0
+      }
+    },
+    {
+      "name": "RESHAPE",
+      "inputs": [
+        32,
+        37
+      ],
+      "output": 38,
+      "options": {}
+    },
+    {
+      "name": "FULLY_CONNECTED",
+      "inputs": [
+        38,
+        5,
+        7
+      ],
+      "output": 39,
+      "options": {
+        "activation": 0
+      }
+    },
+    {
+      "name": "RESHAPE",
+      "inputs": [
+        39,
+        11
+      ],
+      "output": 40,
+      "options": {}
+    }
+  ]
+}

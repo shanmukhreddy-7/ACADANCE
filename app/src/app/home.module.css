@@ -1,0 +1,127 @@
+.home {
+  min-height: 100svh;
+  background: #050608;
+  color: #f7f9ff;
+  display: flex;
+  flex-direction: column;
+  padding: 0 clamp(24px, 6vw, 88px);
+}
+.header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #20242c;
+}
+.header > span:last-child {
+  color: #aeb8cb;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: .1em;
+}
+.workspace {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 70px 0 80px;
+}
+.workspace h1 {
+  font-size: clamp(38px, 5.7vw, 68px);
+  line-height: 1.1;
+  letter-spacing: -.055em;
+  font-weight: 800;
+}
+.workspace > p {
+  color: #adb8ca;
+  margin-top: 16px;
+  font-size: 16px;
+}
+.choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 42px;
+}
+.choices > button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 232px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: left;
+  transition: background .18s ease, transform .18s ease;
+}
+.professor {
+  background: #f3f6fc;
+  color: #101722;
+}
+.professor:hover:not(:disabled) {
+  background: #ffffff;
+  transform: translateY(-3px);
+}
+.student {
+  background: #2463eb;
+  color: #ffffff;
+}
+.student:hover:not(:disabled) {
+  background: #1d56d8;
+  transform: translateY(-3px);
+}
+.choiceName {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -.035em;
+  margin-top: 36px;
+}
+.choiceDetail {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 650;
+}
+.professor .choiceDetail { color: #4d5c73; }
+.student .choiceDetail { color: #ffffff; }
+.arrow {
+  position: absolute;
+  right: 28px;
+  bottom: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.professor .arrow { background: #dfe7f5; }
+.student .arrow { background: #ffffff; color: #1851c7; }
+.choices > button:focus-visible { outline: 3px solid #9cc2ff; outline-offset: 6px; }
+.footer {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px 0;
+  border-top: 1px solid #20242c;
+  color: #a1aec3;
+  font-size: 12px;
+  font-weight: 600;
+}
+.status { display: block; margin-top: 20px; color: #adc7ff; }
+.workspace > .error { color: #ffb4b4; }
+.error button { margin-left: 8px; background: transparent; border: 0; color: #ffffff; text-decoration: underline; }
+@media (max-width: 600px) {
+  .header { min-height: 82px; }
+  .workspace { padding: 48px 0; }
+  .choices { grid-template-columns: 1fr; gap: 16px; margin-top: 30px; }
+  .choices > button { min-height: 188px; padding: 25px; }
+  .choiceName { margin-top: 22px; font-size: 26px; }
+  .arrow { right: 25px; bottom: 26px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .choices > button { transition: none; }
+  .choices > button:hover { transform: none; }
+}
